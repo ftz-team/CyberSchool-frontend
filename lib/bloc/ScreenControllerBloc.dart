@@ -24,6 +24,7 @@ class ScreenControllerBloc {
   void mapEventToState(ScreenControllerEvents event) {
     switch (event) {
       case ScreenControllerEvents.MAIN:
+
         _subject.sink.add(ScreenControllerStates.MAIN);
         break;
       case ScreenControllerEvents.TUTORIAL:

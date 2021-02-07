@@ -5,6 +5,8 @@ import 'package:cyberschool/models/UserModel.dart';
 import 'package:cyberschool/ui/elements/Colors.dart';
 import 'package:cyberschool/ui/elements/Fonts.dart';
 import 'package:cyberschool/ui/elements/Margins.dart';
+import 'package:cyberschool/ui/screens/mainScreen.dart';
+import 'package:cyberschool/ui/screens/screensController.dart';
 import 'package:cyberschool/ui/screens/splashes/fourthSplashScreen.dart';
 import 'package:cyberschool/ui/widgets/splashScreensWidget.dart';
 import 'package:flutter/cupertino.dart';
@@ -111,7 +113,12 @@ class fourthSplashScreenState extends State<fourthSplashScreen>{
                   GestureDetector(
                     onTap: () {
                       globals.user.city = cityController.text;
+                      
                       switchScreenBloc.mapEventToState(ScreenControllerEvents.MAIN);
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => mainScreen()));
                     },
                     child: Container(
                       width: displayWidth(context) * 0.45,
