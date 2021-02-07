@@ -1,3 +1,4 @@
+import 'package:cyberschool/bloc/SplashControllerBloc.dart';
 import 'package:cyberschool/helpers/sizeHelpers.dart';
 import 'package:cyberschool/ui/elements/Colors.dart';
 import 'package:cyberschool/ui/elements/Fonts.dart';
@@ -53,20 +54,26 @@ class firstSplashScreen extends StatelessWidget{
                 30,
                 1000
             ),
-            Container(
-              width: displayWidth(context) * 0.45,
-              padding: EdgeInsets.only(
-                top: displayHeight(context) * 0.015,
-                bottom: displayHeight(context) * 0.015,
-              ),
-              decoration: BoxDecoration(
-                  color: UIColors.yellow,
-                  borderRadius: BorderRadius.circular(15)
-              ),
-              child: Text(
-                constants.firstSplashButtonText,
-                textAlign: TextAlign.center,
-                style: UIFonts.h2(context),
+            GestureDetector(
+              onTap: (){
+                print("!!!!!!!");
+                splashControllerBloc.mapEventToState(SplashControllerEvents.GO_TO_NEXT);
+              },
+              child: Container(
+                width: displayWidth(context) * 0.45,
+                padding: EdgeInsets.only(
+                  top: displayHeight(context) * 0.015,
+                  bottom: displayHeight(context) * 0.015,
+                ),
+                decoration: BoxDecoration(
+                    color: UIColors.yellow,
+                    borderRadius: BorderRadius.circular(15)
+                ),
+                child: Text(
+                  constants.firstSplashButtonText,
+                  textAlign: TextAlign.center,
+                  style: UIFonts.h2(context),
+                ),
               ),
             )
           ],

@@ -1,4 +1,5 @@
-import 'package:cyberschool/ui/screens/firstSplashScreen.dart';
+import 'file:///D:/AndroidStudioProjects/cyberschool/lib/ui/screens/splashes/firstSplashScreen.dart';
+import 'package:cyberschool/ui/screens/screensController.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 
@@ -18,30 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: StartScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return firstSplashScreen();
-  }
-}
