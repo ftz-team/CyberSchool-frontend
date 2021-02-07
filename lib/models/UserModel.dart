@@ -4,19 +4,15 @@ import 'package:cyberschool/helpers/dateHelpers.dart';
 import 'package:flutter/services.dart';
 import 'package:device_info/device_info.dart';
 import 'package:cyberschool/models/AbstractModel.dart';
+import 'Gender.dart';
 
-enum Gender {
-  male,
-  female,
-  other
-}
 
 class UserModel extends AbstractModel{
 
   String _deviceId = null;
-  DateTime _birthday;
-  Gender _gender = Gender.other;
-  String _city;
+  DateTime _birthday = DateTime.now();
+  Gender _gender = Gender.OTHER;
+  String _city = "";
 
 
   Future<String> get deviceId async{
@@ -39,24 +35,35 @@ class UserModel extends AbstractModel{
     return _deviceId;
   }
 
-  String get gender{
-    return _gender.toString();
+  Gender get gender{
+    return _gender;
   }
 
-  String get birthday{
-    return djangoS(_birthday);
+  void set gender(Gender gender){
+    _gender = gender;
+  }
+
+  DateTime get birthday{
+    return _birthday;
   }
 
   String get city{
     return _city;
   }
 
+  void set birthday(DateTime birthday) {
+    _birthday = birthday;
+  }
+
+  void set city(String city) {
+    _city = city;
+  }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.deviceId;
-    data['gender'] = this.gender;
-    data['birthday'] = this.birthday;
+    data['gender'] = this.gender.toString();
+    data['birthday'] = djangoS(this.birthday);
     data['city'] = this.city;
     return data;
   }

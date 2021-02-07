@@ -1,10 +1,14 @@
 import 'package:cyberschool/bloc/SplashControllerBloc.dart';
 import 'package:cyberschool/helpers/sizeHelpers.dart';
+import 'package:cyberschool/models/UserModel.dart';
 import 'package:cyberschool/ui/elements/Colors.dart';
 import 'package:cyberschool/ui/elements/Fonts.dart';
 import 'package:cyberschool/ui/elements/Margins.dart';
+import 'package:cyberschool/ui/screens/splashes/secondSplashScreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cyberschool/constants.dart' as constants;
+import 'package:cyberschool/globals.dart' as globals;
 
 class firstSplashScreen extends StatelessWidget{
   @override
@@ -56,8 +60,9 @@ class firstSplashScreen extends StatelessWidget{
             ),
             GestureDetector(
               onTap: (){
-                print("!!!!!!!");
-                splashControllerBloc.mapEventToState(SplashControllerEvents.GO_TO_NEXT);
+                globals.user = UserModel();
+                globals.user.deviceId;
+                Navigator.push(context, CupertinoPageRoute(builder: (context)=>secondSplashScreen()));
               },
               child: Container(
                 width: displayWidth(context) * 0.45,

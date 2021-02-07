@@ -40,6 +40,20 @@ String dmy(DateTime date) {
   return day + "." + month + "." + year.substring(2);
 }
 
+String dmyExt(DateTime date) {
+  String day, month, year;
+  day = date.day.toString();
+  month = date.month.toString();
+  year = date.year.toString();
+  if (day.length < 2) {
+    day = "0" + day;
+  }
+  if (month.length < 2) {
+    month = "0" + month;
+  }
+  return day + "." + month + "." + year;
+}
+
 String day(int index) {
   List<String> days = [
     'понедельник',

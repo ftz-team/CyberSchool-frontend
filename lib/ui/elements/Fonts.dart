@@ -11,7 +11,7 @@ class UIFonts{
         color : color,
         fontWeight: weight,
         fontFamily: font,
-        fontSize: displayWidth(context) * 0.07
+        fontSize: displayWidth(context) * 0.06
     );
   }
 

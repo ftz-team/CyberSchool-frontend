@@ -1,4 +1,5 @@
 import 'package:cyberschool/bloc/ScreenControllerBloc.dart';
+import 'package:cyberschool/ui/screens/splashes/firstSplashScreen.dart';
 import 'file:///D:/AndroidStudioProjects/cyberschool/lib/ui/screens/mainScreen.dart';
 import 'package:cyberschool/ui/screens/splashes/splashScreensController.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _StartScreenState extends State<StartScreen> {
             return mainScreen();
             break;
           case ScreenControllerStates.TUTORIAL:
-            return splashScreensController();
+            return firstSplashScreen();
             break;
           case ScreenControllerStates.LOADING:
             return CircularProgressIndicator();

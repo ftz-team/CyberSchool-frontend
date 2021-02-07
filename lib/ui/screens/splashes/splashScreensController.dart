@@ -33,6 +33,8 @@ class _splashScreensControllerState extends State<splashScreensController>{
           case 3:
             return fourthSplashScreen();
             break;
+          default:
+            return secondSplashScreen();
         }
       },
     );
