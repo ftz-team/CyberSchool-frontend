@@ -45,4 +45,14 @@ class UIFonts{
     );
   }
 
+  //figma 13px
+  static TextStyle cardText(BuildContext context,{Color color = UIColors.fontColor,FontWeight weight =  FontWeight.w600}){
+    return TextStyle(
+        color : color,
+        fontWeight: weight,
+        fontFamily: font,
+        fontSize: displayWidth(context) * 0.036
+    );
+  }
+
 }

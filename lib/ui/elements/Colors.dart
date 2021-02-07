@@ -7,5 +7,6 @@ class UIColors{
   static Color thinFontColor = Color(0xff000000).withOpacity(0.37);
   static const Color defaultBackground = Colors.white;
   static const Color blue = Color(0xff306AFF);
+  static const Color pink = Color(0xffEC1C32);
 
 }
